@@ -1,6 +1,6 @@
 public class ObjectRefrence {
 
-    public  String demo(){
-        return  "demo";
+    public  String demo1(){
+        return  "demo12";
     }
 }
