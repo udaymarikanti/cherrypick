@@ -1,7 +1,7 @@
 package car;
 
-public class OldCarRemodiling extends RemodelingCar{
-    public OldCarRemodiling(String wheels, String backCamera, String seatCovers) {
+public class CarRemodiling extends UpgradeCar {
+    public CarRemodiling(String wheels, String backCamera, String seatCovers) {
         super(wheels, backCamera, seatCovers);
     }
 

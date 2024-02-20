@@ -1,7 +1,7 @@
 package car;
 
-public class RemodelingCar extends Accessories{
-    public RemodelingCar(String wheels, String backCamera, String seatCovers) {
+public class UpgradeCar extends Accessories{
+    public UpgradeCar(String wheels, String backCamera, String seatCovers) {
         super(wheels, backCamera, seatCovers);
     }
 

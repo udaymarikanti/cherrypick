@@ -1,0 +1,23 @@
+package emi;
+
+public class MonthlyEMI extends ProcessAmount {
+
+
+    double monthlyIntrest = 0;
+    double emi =0;
+    double remaingAmount = 0;
+
+    public  double processAmount( int processingAmount,double intresest ,int duration){
+        for ( int i = 0; i < duration; i ++) {
+             monthlyIntrest = super.processAmount(processingAmount,intresest) / duration;
+            System.out.println(" monthly ammount " + monthlyIntrest);
+            emi = monthlyIntrest + intresest;
+            System.out.println("monthly emi : " + emi);
+        }
+        remaingAmount = processingAmount-emi;
+        System.out.println(" remaing amount  " + remaingAmount);
+        return remaingAmount;
+
+    }
+
+}
