@@ -14,9 +14,9 @@ public class TrensferProcess extends  RBIBankService{
         sbiBankService.sbiCredetes(8000);
         System.out.println(sbiBankService.creadetedAmount());
 
-        hdfcBankService.hdfcCredetes(3500);
+        hdfcBankService.hdfcCredetes(9000);
         hdfcBankService.hdfcCredetes(7000);
-        hdfcBankService.hdfcCredetes(2000);
+        hdfcBankService.hdfcCredetes(5000);
         System.out.println(hdfcBankService.creadetedAmount());
 
         int sbiCreditedAmount = sbiBankService.creadetedAmount();
@@ -26,20 +26,21 @@ public class TrensferProcess extends  RBIBankService{
         System.out.println("HDFC Credited Amount: " + hdfcCreditedAmount);
 
         if(sbiCreditedAmount>hdfcCreditedAmount){
-            extraAmount = sbiBankService.credite-hdfcBankService.credite;
-            System.out.println("extra amount at  SBI " +extraAmount);
+            extraAmount = sbiBankService.creadetedAmount()-hdfcBankService.creadetedAmount();
 
-            remaingBalanceInBank = sbiBalance +extraAmount;
-            debitedAmount = hdfcBalance-extraAmount;
+            remaingBalanceInBank = sbiBalance -extraAmount;
+            debitedAmount = hdfcBalance+extraAmount;
 
             System.out.println("debit amount from HDFC : " + debitedAmount);
-            System.out.println("remaing amount at RBI from SBI BANK " + remaingBalanceInBank);
+            System.out.println("extra amount at  SBI " +extraAmount);
+
+            System.out.println("new SBI AMOUNT  at RBI from SBI BANK " + remaingBalanceInBank);
 
         }else {
 
             extraAmount =  hdfcBankService.creadetedAmount()-sbiBankService.creadetedAmount();
-            remaingBalanceInBank =hdfcBalance+extraAmount;
-            debitedAmount = sbiBalance-extraAmount;
+            remaingBalanceInBank =hdfcBalance-extraAmount;
+            debitedAmount = sbiBalance+extraAmount;
 
             System.out.println("new  amount from SBI : " +debitedAmount);
             System.out.println("extra amount from HDFC " +extraAmount);
