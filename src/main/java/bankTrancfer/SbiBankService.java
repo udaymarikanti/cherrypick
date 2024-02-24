@@ -10,6 +10,6 @@ public class SbiBankService  extends  RBIBankService{
     @Override
     public int creadetedAmount() {
 
-        return credite;
+        return sbiCredetes(credite);
     }
 }

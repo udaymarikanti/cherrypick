@@ -4,20 +4,8 @@ public class TrensferProcess extends  RBIBankService{
     int extraAmount ;
     int remaingBalanceInBank ;
     int debitedAmount ;
-    public int creadetedAmount() {
+    public int creadetedAmountProcess(HdfcBankService hdfcBankService,SbiBankService sbiBankService) {
 
-        SbiBankService sbiBankService = new SbiBankService();
-        HdfcBankService hdfcBankService = new HdfcBankService();
-
-        sbiBankService.sbiCredetes(4000);
-        sbiBankService.sbiCredetes(3000);
-        sbiBankService.sbiCredetes(8000);
-        System.out.println(sbiBankService.creadetedAmount());
-
-        hdfcBankService.hdfcCredetes(9000);
-        hdfcBankService.hdfcCredetes(7000);
-        hdfcBankService.hdfcCredetes(5000);
-        System.out.println(hdfcBankService.creadetedAmount());
 
         int sbiCreditedAmount = sbiBankService.creadetedAmount();
         int hdfcCreditedAmount = hdfcBankService.creadetedAmount();
@@ -48,6 +36,12 @@ public class TrensferProcess extends  RBIBankService{
 
         }
         return extraAmount;
+    }
+
+    @Override
+    public int creadetedAmount() {
+
+        return 0;
     }
 }
 
