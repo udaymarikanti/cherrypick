@@ -11,16 +11,23 @@ public class WhileLoopDemo {
         long startTime = System.currentTimeMillis();
         Calendar calendar = Calendar.getInstance();
         Date currentTime = calendar.getTime();
-        calendar.add(Calendar.MINUTE,2);
+        calendar.add(Calendar.MINUTE,1);
+        Date endTime = calendar.getTime();
 
-            while (true) {
+            while (currentTime.before(endTime)) {
 
 
                 try {
                     FileInputStream fileInputStream = new FileInputStream("D:\\WhileLoopDemoFile\\hello.txt");
-                } catch (FileNotFoundException ex) {
-                    throw new RuntimeException(ex);
+                    System.out.println("File found ");
+                    break;
+                } catch (FileNotFoundException e) {
+                    System.out.println("file not found ");
+                    //throw new RuntimeException(e);
                 }
+                calendar = Calendar.getInstance();
+                currentTime = calendar.getTime();
+
             }
 
         }
