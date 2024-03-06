@@ -7,7 +7,6 @@ import java.util.Date;
 import java.util.UUID;
 
 public class SBIBankService {
-
     public  String accountNumber = "1234";
     private  double amt = 5000;
     public  String merchantAccountNumber = "2222";

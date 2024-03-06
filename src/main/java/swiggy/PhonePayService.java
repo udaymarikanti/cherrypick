@@ -9,9 +9,9 @@ public class PhonePayService implements SwiggyPaymentService {
     @Override
     public PaymentResponse payment(PaymentRequest request) {
 
-
         SBIBankService sbiBankService = new SBIBankService();
 
         return sbiBankService.trnsfer(request);
+
     }
 }
