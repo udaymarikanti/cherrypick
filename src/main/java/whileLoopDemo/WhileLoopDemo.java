@@ -8,7 +8,6 @@ import java.util.Date;
 public class WhileLoopDemo {
 
     public static void main(String[] args) {
-        long startTime = System.currentTimeMillis();
         Calendar calendar = Calendar.getInstance();
         Date currentTime = calendar.getTime();
         calendar.add(Calendar.MINUTE,1);

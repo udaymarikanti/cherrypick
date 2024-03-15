@@ -8,7 +8,7 @@ public class BookMyShowTest {
             GenerateOtp generateOtp = new GenerateOtp();
             generateOtp.generateOtp(bookMyShowLogin,"uday");
             BookingProcess bookingProcess = new BookingProcess();
-            bookingProcess.bookingProcess(300,generateOtp,"98765");
+            bookingProcess.bookingProcess(3,generateOtp,"98765");
             PayMentProcess payMentProcess = new PayMentProcess();
             payMentProcess.bookingPaymentProcess(bookingProcess,"success");
         } catch (BookMyShowException e) {
