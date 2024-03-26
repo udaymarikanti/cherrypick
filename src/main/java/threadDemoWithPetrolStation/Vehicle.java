@@ -21,4 +21,12 @@ public class Vehicle extends Thread{
             petrolStation.diesel(Thread.currentThread().getName(), this.liters);
         }
     }
+//    public void run(){
+//        if(type.equals("petrol")){
+//            System.out.println("vechile number " + Thread.currentThread().getName());
+//            petrolStation.petrollsynchronizedblock(Thread.currentThread().getName(), this.liters);
+//        }else {
+//            petrolStation.dieselsynchronizedblock(Thread.currentThread().getName(), this.liters);
+//        }
+//    }
 }

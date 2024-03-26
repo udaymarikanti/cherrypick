@@ -2,7 +2,9 @@ package threadDemoWithPetrolStation;
 
 public class SynchronizedDemoTest {
     public static void main(String[] args) {
+
         PetrolStation petrolStation = new PetrolStation();
+
         Thread ts03en4941 = new Vehicle(3,"Emity", "petrol",petrolStation);
         ts03en4941.setName("ts03en4941");
         Thread ap248199 = new Vehicle(5,"Emity", "petrol",petrolStation);

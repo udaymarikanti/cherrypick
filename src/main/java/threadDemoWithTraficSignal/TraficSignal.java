@@ -6,18 +6,16 @@ public class TraficSignal {
     boolean  isRed = true;
 
 
+
     public synchronized void redLight(String vehicleNum){
         System.out.println("vehicle stop " + vehicleNum);
 
-        while (isRed){
+        while (!isRed){
         try {
             wait();
-           // Thread.sleep(10000);
         } catch (InterruptedException e) {
             System.out.println(e.getMessage());
         }
-
-
             System.out.println("vehicle is moving " + vehicleNum);
         }
     }
@@ -27,19 +25,27 @@ public class TraficSignal {
         while (!isRed){
             try {
                 wait();
-              //  Thread.sleep(10000);
             } catch (InterruptedException e) {
                 System.out.println(e.getMessage());
             }
-
-
         }
         System.out.println("vehicle is moving " + vehicleNum);
 
     }
-    public synchronized void changeSignal(){
-        isRed= !isRed;
-       notifyAll();
-        //notify();
+    public  void changeSignal(){
+        if(Thread.currentThread().equals("east")){
+            isRed= !isRed;
+            notify();
+        }else {
+            isRed=isRed;
+            System.out.println("signal is still red ");
+        }
+        if(Thread.currentThread().equals("west")) {
+            isRed = !isRed;
+            notify();
+        } else {
+            isRed=isRed;
+            System.out.println("signal is still red ");
+        }
     }
 }
