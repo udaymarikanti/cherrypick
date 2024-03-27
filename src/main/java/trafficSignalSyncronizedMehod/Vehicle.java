@@ -4,27 +4,24 @@ package trafficSignalSyncronizedMehod;
 
 public class Vehicle extends Thread{
 
-    String signalStatus;
+    String vehileDirection;
     TrafficSignalWithDirection traficDirection;
 
-    public Vehicle(String signalStatus,TrafficSignalWithDirection traficDirection){
-        this.signalStatus = signalStatus;
+    public Vehicle(String vehileDirection,TrafficSignalWithDirection traficDirection){
+        this.vehileDirection = vehileDirection;
         this.traficDirection = traficDirection;
 
     }
 
     public void run()  {
-        if (signalStatus.equals("red")) {
-                traficDirection.directionNorth(Thread.currentThread().getName());
-                traficDirection.directionSouth(Thread.currentThread().getName());
-
-
-            //traficDirection.(Thread.currentThread().getName());
-        }else
-        {
-                traficDirection.directionEast(Thread.currentThread().getName());
-                traficDirection.directionWest(Thread.currentThread().getName());
-
+        if (vehileDirection.equals("North")) {
+            traficDirection.directionNorth(Thread.currentThread().getName());
+        }else if (vehileDirection.equals("South")) {
+            traficDirection.directionSouth(Thread.currentThread().getName());
+        }else if (vehileDirection.equals("East")){
+            traficDirection.directionEast(Thread.currentThread().getName());
+        } else if (vehileDirection.equals("West")){
+            traficDirection.directionWest(Thread.currentThread().getName());
         }
     }
 
